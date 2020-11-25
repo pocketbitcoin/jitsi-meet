@@ -113,6 +113,7 @@ import {
     maybeOpenFeedbackDialog,
     submitFeedback
 } from './react/features/feedback';
+import { setLargeVideoFlip } from './react/features/large-video/actions.web';
 import { showNotification } from './react/features/notifications';
 import { mediaPermissionPromptVisibilityChanged } from './react/features/overlay';
 import { suspendDetected } from './react/features/power-monitor';
@@ -868,6 +869,11 @@ export default {
     toggleAudioMuted(showUI = true) {
         this.muteAudio(!this.isLocalAudioMuted(), showUI);
     },
+
+    setFlip(val) {
+        APP.store.dispatch(setLargeVideoFlip(val));
+    },
+
 
     /**
      * Simulates toolbar button click for presenter video mute. Used by

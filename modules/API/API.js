@@ -161,6 +161,9 @@ function initCommands() {
             sendAnalytics(createApiEvent('chat.toggled'));
             APP.UI.toggleChat();
         },
+        'set-flip-x': val => {
+            APP.conference.setFlip(val);
+        },
 
         /**
          * Callback to invoke when the "toggle-share-screen" command is received.
